@@ -1,0 +1,27 @@
+dCalendario =  CALENDARAUTO()
+
+Ano = YEAR([Date])
+Comeco do Ano = DATE( YEAR([Date]),1,1)
+Final do Ano = DATE( YEAR([Date]),12,31)
+Mes = MONTH([Date])
+Comeco do Mes = DATE( YEAR([Date]), MONTH([Date]), 1)
+Fim do Mes = EOMONTH([Date],0)
+Qtd Dias no Mes = DATEDIFF(DATE( YEAR([Date]), MONTH([Date]), 1),EOMONTH([Date],0),DAY)+1
+AnoMes = INT(FORMAT([Date],"YYYYMM"))
+Ano Mes Nome = FORMAT([Date],"YYYY-MMM")
+Dia = DAY([Date])
+Nome do Dia = FORMAT([Date],"DDDD")
+Nome do Dia Abrev = FORMAT([Date],"DDD")
+Dia da Semana = WEEKDAY([Date])
+Dia do Ano = DATEDIFF(DATE( YEAR([Date]), 1, 1),[Date],DAY)+1
+Nome do Mes = FORMAT([Date],"MMMM")
+Nome do Mes Abrev = FORMAT([Date],"MMM")
+Trimestre = QUARTER([Date])
+Nome Trimestre = "Q"&FORMAT([Date],"Q")
+AnoTridrimestre = INT(FORMAT([Date],"YYYYQ"))
+Ano e Trimestre Nome = FORMAT([Date],"YYYY")&" Q"&FORMAT([Date],"Q")
+Comeco do Trimestre = DATE( YEAR([Date]), (QUARTER([Date])*3)-2, 1)
+Termino do Trimestre = EOMONTH(DATE( YEAR([Date]), QUARTER([Date])*3, 1),0)
+Semana do Ano = WEEKNUM([Date])
+Comeco da Semana =  [Date]-WEEKDAY([Date])+1
+Fim da Semana = [Date]+7-WEEKDAY([Date])

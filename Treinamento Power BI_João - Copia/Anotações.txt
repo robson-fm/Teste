@@ -1,0 +1,55 @@
+28/08 - Segunda
+
+Treinamento de Power BI
+
+Bancos de dados sql
+
+sql serve 
+
+1) Extração 
+
+2) Estruturação
+
+3) Modelagem 
+
+
+-----------------------
+29/08 - Terça
+
+Mostra como é feito na prática.
+
+4)Cálculos - documentação visão geral DAX microsoft
+
+criar coluna Date
+dCalendario = CALENDARAUTO()
+
+criar coluna Ano
+Ano = YEAR([Date])
+
+criar coluna Mes
+Mes = MONTH([Date])
+
+criar coluna Mes/Ano
+Mes/Ano = FORMAT([Date],"mm/yyyy")
+
+
+criar coluna Dia
+Dia = DAY([Date])
+
+Calculo de médida VGV
+
+Soma VGV = 
+ VAR vSoma = sum(fVendas[VGV]) 
+ VAR vformatacao = 
+ SWITCH( TRUE(), 
+ vSoma > 1000000000, FORMAT(vSoma, "R$ #, 0,,, Bi"),
+ vSoma > 1000000, FORMAT(vSoma, "R$ #,0,, Mi"),
+ vSoma > 1000,FORMAT(vSoma, "R$ #,0, K"),
+ FORMAT(vSoma,"#")) return vformatacao
+
+link da documentação: https://learn.microsoft.com/pt-br/dax/dax-overview
+
+
+------------------------------------------------------------------------------
+
+30/08 - Quarta
